@@ -75,18 +75,6 @@ export default function Contact() {
               </Button>
             </div>
 
-            {portfolioData.contact.phone && (
-              <div className="p-6 rounded-lg bg-[rgba(255,255,255,0.03)] border border-circuit backdrop-blur-sm">
-                <p className="text-sm text-text-muted mb-1">{t.contact.phone}</p>
-                <a
-                  href={`tel:${portfolioData.contact.phone.replace(/\s/g, '')}`}
-                  className="text-lg text-text-main hover:text-accent-orange transition-colors"
-                >
-                  {portfolioData.contact.phone}
-                </a>
-              </div>
-            )}
-
             {portfolioData.contact.location && (
               <div className="p-6 rounded-lg bg-[rgba(255,255,255,0.03)] border border-circuit backdrop-blur-sm">
                 <p className="text-sm text-text-muted mb-1">{t.contact.location}</p>

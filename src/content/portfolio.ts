@@ -42,9 +42,10 @@ export const portfolioData: PortfolioData = {
     },
   ],
   contact: {
-    email: 'p.czapor@gmail.com',
-    phone: '694 154 154',
+    email: 'p.czapor.dev@gmail.com',
     location: 'Rzeszów, Poland',
+    linkedin: 'https://www.linkedin.com/in/piotr-czapor-669280262/',
+    github: 'https://github.com/PCzapor',
   },
 }
 
