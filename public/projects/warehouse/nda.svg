@@ -1,0 +1,85 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- ORIGINAL BACKGROUND GRADIENT -->
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#102a43;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#243b53;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334e68;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- ORIGINAL GRID -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a2f47" stroke-width="1"/>
+    </pattern>
+
+    <!-- GLOW -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="1 0 0 0 0
+                0 0.6 0 0 0
+                0 0 0.1 0 0
+                0 0 0 0.9 0" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#grad)"/>
+  <rect width="1200" height="675" fill="url(#grid)" opacity="0.30"/>
+
+  <!-- Fake system code in background -->
+  <text x="80" y="120" font-family="monospace" font-size="14" fill="#1e3a4a" opacity="0.35">
+    <tspan x="80" dy="0">connectWarehouse()</tspan>
+    <tspan x="80" dy="20">validateWorkerPermissions()</tspan>
+    <tspan x="80" dy="20">processInventoryInput()</tspan>
+    <tspan x="80" dy="20">syncOutboundLogistics()</tspan>
+    <tspan x="80" dy="20">secureAuditTrail()</tspan>
+  </text>
+
+  <!-- Frame -->
+  <rect x="50" y="50" width="1100" height="575"
+        fill="none" stroke="#f97316" stroke-width="2"
+        stroke-dasharray="6,6" opacity="0.55" rx="10"/>
+
+  <!-- Lock icon -->
+  <g transform="translate(600,170)" filter="url(#glow)">
+    <rect x="-22" y="10" width="44" height="38" rx="6" fill="#f97316" opacity="0.9"/>
+    <path d="M -14 10 v-14 a14 14 0 0 1 28 0 v14" stroke="#f97316" stroke-width="6" fill="none"/>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="250"
+        font-family="Arial, sans-serif"
+        font-size="34"
+        font-weight="bold"
+        fill="#f97316"
+        text-anchor="middle"
+        filter="url(#glow)">
+    NDA / DATA SECURITY RESTRICTION
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="290"
+        font-family="Arial, sans-serif"
+        font-size="18"
+        fill="#9fb3c8"
+        text-anchor="middle">
+    Screenshots of the real system cannot be publicly displayed
+  </text>
+
+  <!-- Description -->
+  <text x="600" y="350"
+        font-family="Arial, sans-serif"
+        font-size="16"
+        fill="#cbd2d9"
+        text-anchor="middle">
+    <tspan x="600" dy="0">Due to NDA and data-security requirements, real system visuals</tspan>
+    <tspan x="600" dy="26">cannot be shared. The platform supported large-scale warehouse</tspan>
+    <tspan x="600" dy="26">inventory and operations management, complex business workflows,</tspan>
+    <tspan x="600" dy="26">worker logic, and inbound/outbound inventory integrations.</tspan>
+  </text>
+</svg>

@@ -1,0 +1,492 @@
+export const translations = {
+  pl: {
+    nav: {
+      start: 'START',
+      about: 'O MNIE',
+      skills: 'UMIEJĘTNOŚCI',
+      projects: 'PROJEKTY',
+      experience: 'DOŚWIADCZENIE',
+      contact: 'KONTAKT',
+    },
+    hero: {
+      tagline: 'Tworzę nowoczesne aplikacje webowe z naciskiem na UX i performance',
+      viewProjects: 'ZOBACZ PROJEKTY',
+      contact: 'KONTAKT',
+    },
+   
+    about: {
+      title: 'O MNIE',
+      bullets: [
+        'Specjalizuję się w [[React]], [[Next.js]], [[Vue 3]] i [[TypeScript]]',
+        'Buduję skalowalne backendy w [[Node.js]]',
+        'Dbam o jakość kodu, testy i best practices',
+        'Pracuję w metodologiach Agile/Scrum',
+        'Pasjonuję się nowoczesnymi technologiami i ciągłym rozwojem',
+      ],
+      tech: {
+        TypeScript: {
+          desc: 'Typowany JavaScript do skalowalnych i utrzymywalnych aplikacji.',
+        },
+        React: {
+          desc: 'Architektura oparta o komponenty i świetne DX.',
+        },
+        "Vue 3": { desc: 'Framework Vue 3 do budowania interfejsów użytkownika z Composition API.' },
+        'Next.js': {
+          desc: 'Framework React do aplikacji produkcyjnych (SSR, routing, architektura).',
+        },
+        'Node.js': {
+          desc: 'Środowisko backendowe do API i usług.',
+        },
+      },
+    
+    },
+    skills: {
+      title: 'UMIEJĘTNOŚCI',
+    },
+    experience: {
+      title: 'DOŚWIADCZENIE',
+      content:[{
+        company: "Ideo sp. z o.o.",
+        role: "Frontend Developer",
+        period: "Paź 2023 — Paź 2025",
+        description: [
+          "Tworzenie i utrzymanie aplikacji webowych wspierających automatyzację procesów magazynowych i produkcyjnych.",
+          "Budowanie złożonych przepływów UI w React, Vue 3 oraz Next.js zintegrowanych z systemami backendowymi.",
+          "Prowadzenie migracji z React 16 do nowoczesnej architektury, poprawiającej wydajność i utrzymywalność kodu.",
+          "Refaktoryzacja i stabilizacja ponad 7-letniego systemu legacy, redukcja długu technologicznego.",
+          "Optymalizacja renderowania, zarządzania stanem oraz ogólnej wydajności aplikacji.",
+        ],
+      },
+      {
+        company: "Protocolly sp. z o.o.",
+        role: "Junior Frontend Developer",
+        period: "Sty 2023 — Gru 2023",
+        description: [
+          "Stworzenie aplikacji typu Proof of Concept do zarządzania danymi medycznymi.",
+          "Budowa skalowalnego frontendu w Next.js we współpracy z backendem opartym o NestJS.",
+        ],
+      },
+    ]},
+    projects: 
+     {
+      title: 'PROJEKTY',
+      content:[{
+      id: 'pgnig',
+      title: 'PGNiG - Elektroniczne Biuro Obsługi Klienta (eBOK)',
+      tagline: 'Platforma self-service do zarządzania umowami, płatnościami i usługami dla klientów PGNiG',
+      description: 'Rozbudowana platforma klientowska umożliwiająca użytkownikom zarządzanie umowami, płatnościami, produktami oraz usługami gazowymi w modelu self-service. System obsługuje złożone scenariusze biznesowe, integracje z systemami wewnętrznymi oraz procesy finansowe, przy zachowaniu wysokiej wydajności i dostępności dla dużej liczby użytkowników.',
+      features: [
+        'Panel klienta do zarządzania umowami, punktami poboru i usługami',
+        'Obsługa płatności online oraz historii rozliczeń i faktur',
+        'Procesy zawierania nowych umów i modyfikacji istniejących usług',
+        'Rozbudowane formularze i przepływy wieloetapowe',
+        'Integracja z systemami wewnętrznymi i zewnętrznymi usługami płatniczymi',
+        'Dashboardy i widoki podsumowujące dane klienta',
+      ],
+      tasks: [
+        'Rozwój i utrzymanie architektury frontendu w aplikacji o dużej skali',
+        'Implementacja złożonych przepływów UI powiązanych z logiką biznesową',
+        'Integracja z API systemów wewnętrznych oraz usługami zewnętrznymi',
+        'Refaktoryzacja legacy codebase i redukcja długu technologicznego',
+        'Optymalizacja wydajności renderowania i zarządzania stanem aplikacji',
+        'Współpraca z backendem, UX oraz zespołami domenowymi przy projektowaniu funkcjonalności',
+        'Code review oraz dbanie o jakość i spójność architektury frontendu',
+      ],
+      stack: ['React',
+      'TypeScript',
+      'REST API',
+      'Redux / RTK Query',
+      'Tailwind / SCSS',],
+        role: 'Frontend Developer / Frontend Owner',
+        images: [
+          '/projects/pgnig/pgnig1.jpg',
+          '/projects/pgnig/pgnig2.jpg',
+          '/projects/pgnig/pgnig3.jpg',
+          '/projects/pgnig/pgnig4.jpg',
+          '/projects/pgnig/pgnig5.jpg',
+          '/projects/pgnig/pgnig6.jpg',
+          '/projects/pgnig/pgnig7.jpg',
+          '/projects/pgnig/pgnig8.jpg',
+          '/projects/pgnig/pgnig9.jpg',
+          '/projects/pgnig/pgnig10.jpg',
+          '/projects/pgnig/pgnig11.jpg',
+        ],
+        githubUrl: '',
+        websiteUrl: 'https://ebok.pgnig.pl/',
+      },
+     
+      {
+        id: 'production-warehouse-system',
+        title: 'Production & Warehouse Management System',
+        tagline: 'System operacyjny do zarządzania produkcją, pracownikami i przepływem towaru',
+        description:
+          'Wewnętrzna aplikacja wspierająca codzienne operacje w środowisku produkcyjnym i magazynowym. System umożliwiał pracownikom rejestrowanie aktywności, zarządzanie przypisaniami do linii produkcyjnych, zgłaszanie usterek oraz obsługę procesów związanych z przepływem towaru. Aplikacja działała w oparciu o złożoną logikę biznesową, role użytkowników i integracje z systemami wewnętrznymi odpowiedzialnymi za stany magazynowe i operacje produkcyjne.',
+        features: [
+          'Panel pracownika do zarządzania zadaniami i aktywnościami',
+          'Rejestrowanie przerw, statusów pracy i zdarzeń operacyjnych',
+          'System zgłaszania usterek i problemów technicznych',
+          'Przypisywanie pracowników do linii produkcyjnych i obszarów',
+          'Obsługa procesów magazynowych i ruchu towaru',
+          'Widoki tabelaryczne i dashboardy operacyjne',
+          'Formularze wieloetapowe z walidacją i zależnościami biznesowymi',
+        ],
+        tasks: [
+          'Implementacja interfejsów użytkownika dla modułów pracowniczych i operacyjnych',
+          'Budowa złożonych formularzy i przepływów opartych o logikę biznesową',
+          'Integracja z REST API systemów wewnętrznych',
+          'Zarządzanie stanem aplikacji z użyciem Pinia',
+          'Refaktoryzacja i rozwój istniejącego kodu w środowisku legacy + nowe moduły',
+          'Optymalizacja wydajności widoków tabelarycznych i formularzy',
+          'Współpraca z backendem i zespołami operacyjnymi przy modelowaniu procesów',
+        ],
+        stack: [
+          'Vue 3',
+          'TypeScript',
+          'Pinia',
+          'REST API',
+          'SCSS / CSS',
+        ],
+        role: 'Frontend Developer',
+        images: [
+          '/projects/warehouse/nda.svg',
+        ],
+        githubUrl: '',
+        websiteUrl: '',
+      },
+      {
+        id: 'personal-workspace-app',
+        title: 'Personal Workspace App',
+        tagline: 'Full-stack aplikacja do zarządzania zadaniami, notatkami i kontekstem pracy w jednym miejscu',
+        description:
+          'Autorska aplikacja full-stack zaprojektowana jako osobiste środowisko pracy łączące zarządzanie zadaniami, notatkami i kontekstem projektowym. System skupia się na produktywności, przejrzystej architekturze oraz integracji frontendu z backendem w modelu nowoczesnej aplikacji webowej. Projekt rozwijany z naciskiem na jakość kodu, modularność oraz realne wzorce architektoniczne stosowane w aplikacjach produkcyjnych.',
+        features: [
+          'Zarządzanie zadaniami z podziałem na projekty i statusy',
+          'System notatek powiązanych z zadaniami i kontekstem pracy',
+          'Widoki dashboardowe podsumowujące aktywność użytkownika',
+          'Logika autoryzacji użytkownika i sesji',
+          'Dynamiczne formularze i interaktywne UI',
+          'Architektura przygotowana pod dalszą rozbudowę modułów',
+        ],
+        tasks: [
+          'Projekt architektury aplikacji (frontend + backend)',
+          'Implementacja systemu autentykacji, sesji i ochrony tras',
+          'Budowa API i logiki backendowej dla zarządzania danymi użytkownika',
+          'Zarządzanie stanem i strukturą aplikacji po stronie frontendu',
+          'Projektowanie komponentów UI i interakcji użytkownika',
+          'Dbanie o strukturę projektu, typowanie i skalowalność kodu',
+        ],
+        stack: [
+          'Next.js',
+          'TypeScript',
+          'Nest.js',
+          'REST API',
+          'React',
+          'Tailwind CSS',
+        ],
+        role: 'Full-Stack Developer',
+        images: [
+          '/projects/workspace/workspace5.png',
+          '/projects/workspace/workspace4.png',
+          '/projects/workspace/workspace3.png',
+          '/projects/workspace/workspace2.png',
+          '/projects/workspace/workspace1.png',
+          '/projects/workspace/workspace.png',
+        ],
+        githubUrl: 'https://github.com/PCzapor/personal-workspace-app',
+        websiteUrl: '',
+      },    
+      {
+        id: 'issue-tracker',
+        title: 'Issue Tracker',
+        tagline: 'Aplikacja do zarządzania zgłoszeniami, błędami i zadaniami w projekcie',
+        description:
+          'Webowa aplikacja typu issue tracker stworzona do zarządzania zgłoszeniami, błędami i zadaniami w zespole projektowym. System umożliwia tworzenie, edycję i śledzenie statusu zgłoszeń, pracę na priorytetach oraz organizację workflow. Projekt był ćwiczeniem budowy czytelnej architektury frontendu, integracji z API oraz obsługi stanu aplikacji w środowisku zbliżonym do realnego narzędzia zespołowego.',
+        features: [
+          'Tworzenie, edycja i usuwanie zgłoszeń (issues)',
+          'Statusy i priorytety zgłoszeń',
+          'Widoki listy z sortowaniem i paginacją',
+          'Szczegóły zgłoszenia z opisem i metadanymi',
+          'Formularze z walidacją danych',
+          'Obsługa stanów ładowania i błędów',
+        ],
+        tasks: [
+          'Implementacja interfejsu użytkownika do zarządzania zgłoszeniami',
+          'Integracja z REST API i obsługa requestów',
+          'Zarządzanie stanem serwerowym przy użyciu React Query',
+          'Budowa formularzy z walidacją i obsługą błędów',
+          'Projektowanie struktury komponentów i modularnej architektury frontendu',
+          'Obsługa nawigacji i routingu w aplikacji',
+        ],
+        stack: [
+          'React',
+          'TypeScript',
+          'Vite',
+          'React Query',
+          'React Hook Form',
+          'Zod',
+          'REST API',
+          'Tailwind CSS',
+        ],
+        role: 'Frontend Developer',
+        images: [
+          '/projects/issue-tracker/issue.png',
+          '/projects/issue-tracker/issue1.png',
+        ],
+        githubUrl: 'https://github.com/PCzapor/issue-tracker',
+      }
+      ]
+    },
+    contact: {
+      title: 'KONTAKT',
+      subtitle: 'Chcesz porozmawiać o projekcie? Skontaktuj się ze mną!',
+      email: 'EMAIL',
+      phone: 'TELEFON',
+      location: 'LOKALIZACJA',
+      copy: 'KOPIUJ',
+      copied: 'SKOPIOWANO!',
+    },
+    modal: {
+      features: 'FUNKCJONALNOŚCI',
+      tasks: 'MOJE ZADANIA',
+      viewGitHub: 'ZOBACZ KOD NA GITHUB',
+      websiteUrl: 'ZOBACZ STRONĘ',
+      prev: '← POPRZEDNI',
+      next: 'NASTĘPNY →',
+      close: 'Zamknij modal',
+    },
+    footer: {
+      rights: 'WSZYSTKIE PRAWA ZASTRZEŻONE',
+      built: 'ZBUDOWANE Z',
+      and: 'I',
+    },
+  },
+  en: {
+    nav: {
+      start: 'START',
+      about: 'ABOUT',
+      skills: 'SKILLS',
+      projects: 'PROJECTS',
+      experience: 'EXPERIENCE',
+      contact: 'CONTACT',
+    },
+    hero: {
+      tagline: 'I create modern web applications with a focus on UX and performance',
+      viewProjects: 'VIEW PROJECTS',
+      contact: 'CONTACT',
+    },
+  
+    about: {
+      title: 'ABOUT',
+      bullets: [
+        'I specialize in [[React]], [[Next.js]], [[Vue 3]] and [[TypeScript]]',
+        'I build scalable backends in [[Node.js]]',
+        'I care about code quality, tests and best practices',
+        'I work in Agile/Scrum methodologies',
+        'I am passionate about modern technologies and continuous development',
+      ],
+      tech: {
+        TypeScript: { desc: 'Typed JavaScript for scalable, maintainable apps.' },
+        React: { desc: 'Component-driven UI with great developer experience.' },
+        "Vue 3": { desc: 'Modern JavaScript framework for building user interfaces with Composition API.' },
+        'Next.js': { desc: 'Production-ready React framework (SSR, routing, architecture).' },
+        'Node.js': { desc: 'Backend runtime for APIs and services.' },
+      },
+    },
+  
+    skills: { title: 'SKILLS' },
+  
+    experience: {
+      title: 'EXPERIENCE',
+      content:[{
+        company: 'Ideo sp. z o.o.',
+        role: 'Frontend Developer',
+        period: 'Oct 2023 — Oct 2025',
+        description: [
+          'Developed and maintained web applications supporting warehouse and production process automation.',
+          'Built complex UI flows in React, Vue 3 and Next.js integrated with backend systems.',
+          'Led a migration from React 16 to a modern architecture, improving performance and maintainability.',
+          'Refactored and stabilized a 7+ year legacy system, reducing technical debt.',
+          'Optimized rendering, state management and overall application performance.',
+        ],
+      },
+       {
+        company: 'Protocolly sp. z o.o.',
+        role: 'Junior Frontend Developer',
+        period: 'Jan 2023 — Dec 2023',
+        description: [
+          'Built a Proof of Concept application for medical data management.',
+          'Developed a scalable frontend in Next.js in collaboration with a NestJS backend.',
+        ],
+      },
+    ]},
+  
+    projects: {
+      title: 'PROJECTS',
+  
+      content: [{
+        id: 'pgnig',
+        title: 'PGNiG – Electronic Customer Service Office (eBOK)',
+        tagline: 'Self-service platform for managing contracts, payments and services for PGNiG customers',
+        description:
+          'A large-scale customer-facing platform enabling users to manage contracts, payments, products and gas services in a self-service model. The system supports complex business scenarios, integrations with internal systems and financial processes, while maintaining high performance and availability for a large user base.',
+        features: [
+          'Customer panel for managing contracts, metering points and services',
+          'Online payments plus billing and invoice history',
+          'Flows for signing new contracts and modifying existing services',
+          'Advanced multi-step forms and wizard-like flows',
+          'Integration with internal systems and external payment services',
+          'Dashboards and summary views for customer data',
+        ],
+        tasks: [
+          'Developing and maintaining frontend architecture in a large-scale application',
+          'Implementing complex UI flows tightly coupled with business logic',
+          'Integrating internal APIs and external services',
+          'Refactoring legacy codebase and reducing technical debt',
+          'Optimizing rendering performance and state management',
+          'Collaborating with backend, UX and domain teams to design features',
+          'Code reviews and ensuring architectural consistency across the frontend',
+        ],
+        stack: ['React', 'TypeScript', 'REST API', 'Redux / RTK Query', 'Tailwind / SCSS'],
+        role: 'Frontend Developer / Frontend Owner',
+        images: [
+          '/projects/pgnig/pgnig1.jpg',
+          '/projects/pgnig/pgnig2.jpg',
+          '/projects/pgnig/pgnig3.jpg',
+          '/projects/pgnig/pgnig4.jpg',
+          '/projects/pgnig/pgnig5.jpg',
+          '/projects/pgnig/pgnig6.jpg',
+          '/projects/pgnig/pgnig7.jpg',
+          '/projects/pgnig/pgnig8.jpg',
+          '/projects/pgnig/pgnig9.jpg',
+          '/projects/pgnig/pgnig10.jpg',
+          '/projects/pgnig/pgnig11.jpg',
+        ],
+        githubUrl: '',
+        websiteUrl: 'https://ebok.pgnig.pl/',
+      },
+  
+    
+  
+       {
+        id: 'production-warehouse-system',
+        title: 'Production & Warehouse Management System',
+        tagline: 'Operational system for production, employees and inventory flow',
+        description:
+          'An internal application supporting daily operations in production and warehouse environments. It enabled employees to register activity, manage assignments to production lines, report issues and handle inventory-related processes. The system relied on complex business rules, user roles and integrations with internal services responsible for stock and production operations.',
+        features: [
+          'Employee panel for tasks and activity management',
+          'Break tracking, work statuses and operational events',
+          'Issue reporting system for technical problems',
+          'Assigning employees to production lines and areas',
+          'Warehouse operations and goods movement handling',
+          'Table-heavy operational views and dashboards',
+          'Multi-step forms with validation and business-rule dependencies',
+        ],
+        tasks: [
+          'Implementing UI for employee and operational modules',
+          'Building complex forms and workflows based on business logic',
+          'Integrating internal REST APIs',
+          'Managing application state with Pinia',
+          'Refactoring and extending an existing codebase with new modules',
+          'Performance optimization for table views and complex forms',
+          'Collaborating with backend and operations teams to model processes',
+        ],
+        stack: ['Vue 3', 'TypeScript', 'Pinia', 'REST API', 'SCSS / CSS'],
+        role: 'Frontend Developer',
+        images: ['/projects/warehouse/nda.svg'],
+        githubUrl: '',
+        websiteUrl: '',
+      },
+      {
+        id: 'personal-workspace-app',
+        title: 'Personal Workspace App',
+        tagline: 'A full-stack app for tasks, notes and work context in one place',
+        description:
+          'A personal full-stack workspace designed to combine task management, notes and project context. The goal was to build a clean architecture and a solid frontend–backend integration model typical for modern web apps, with a focus on code quality and scalability.',
+        features: [
+          'Task management with projects and statuses',
+          'Notes system linked to tasks and work context',
+          'Dashboard views summarizing activity',
+          'Authentication and session logic',
+          'Dynamic forms and interactive UI',
+          'Architecture prepared for further module expansion',
+        ],
+        tasks: [
+          'Designing the application architecture (frontend + backend)',
+          'Implementing authentication, sessions and route protection',
+          'Building API endpoints and backend logic for user data',
+          'State management and app structure on the frontend',
+          'Designing UI components and user interactions',
+          'Maintaining strong typing and scalable project structure',
+        ],
+        stack: ['Next.js', 'TypeScript', 'Nest.js', 'REST API', 'React', 'Tailwind CSS'],
+        role: 'Full-Stack Developer',
+        images: [
+          '/projects/workspace/workspace5.png',
+          '/projects/workspace/workspace4.png',
+          '/projects/workspace/workspace3.png',
+          '/projects/workspace/workspace2.png',
+          '/projects/workspace/workspace1.png',
+          '/projects/workspace/workspace.png',
+        ],
+        githubUrl: 'https://github.com/PCzapor/personal-workspace-app',
+        websiteUrl: '',
+      },
+       {
+        id: 'issue-tracker',
+        title: 'Issue Tracker',
+        tagline: 'A web app for managing issues, bugs and project tasks',
+        description:
+          'A lightweight issue tracker built to manage reports, bugs and tasks in a project. It supports creating, editing and tracking issues, prioritization and a simple workflow. The project served as a learning playground for frontend architecture, API integration and server-state handling in an app resembling a real team tool.',
+        features: [
+          'Create, edit and delete issues',
+          'Issue statuses and priorities',
+          'List views with sorting and pagination',
+          'Issue details with description and metadata',
+          'Forms with validation',
+          'Loading and error state handling',
+        ],
+        tasks: [
+          'Implementing the UI for issue management',
+          'Integrating REST API and handling requests',
+          'Managing server state with React Query',
+          'Building forms with validation and proper error UX',
+          'Designing a modular component structure and app architecture',
+          'Routing and navigation implementation',
+        ],
+        stack: ['React', 'TypeScript', 'Vite', 'React Query', 'React Hook Form', 'Zod', 'REST API', 'Tailwind CSS'],
+        role: 'Frontend Developer',
+        images: ['/projects/issue-tracker/issue.png', '/projects/issue-tracker/issue1.png'],
+        githubUrl: 'https://github.com/PCzapor/issue-tracker',
+      },
+    ]},
+  
+    contact: {
+      title: 'CONTACT',
+      subtitle: 'Want to discuss a project? Get in touch!',
+      email: 'EMAIL',
+      phone: 'PHONE',
+      location: 'LOCATION',
+      copy: 'COPY',
+      copied: 'COPIED!',
+    },
+  
+    modal: {
+      features: 'FEATURES',
+      tasks: 'MY TASKS',
+      viewGitHub: 'VIEW CODE ON GITHUB',
+      websiteUrl: 'VIEW WEBSITE',
+      prev: '← PREV',
+      next: 'NEXT →',
+      close: 'Close modal',
+    },
+  
+    footer: {
+      rights: 'ALL RIGHTS RESERVED',
+      built: 'BUILT WITH',
+      and: '&',
+    },
+  }}
+
+export type Language = 'pl' | 'en'
+export type TranslationKey = keyof typeof translations.pl
