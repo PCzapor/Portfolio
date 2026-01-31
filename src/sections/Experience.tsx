@@ -57,7 +57,7 @@ export default function Experience() {
                         key={itemIndex}
                         className="flex items-start gap-3 text-text-main"
                       >
-                        <span className="text-accent-orange mt-1.5">•</span>
+                        <span className="text-accent-orange my-auto">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
