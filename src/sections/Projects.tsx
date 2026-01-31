@@ -22,7 +22,7 @@ export default function Projects() {
   }
 
   const goToNext = () => {
-    if (selectedProject !== null && selectedProject < portfolioData.projects.length - 1) {
+    if (selectedProject !== null && selectedProject < t.projects.content.length - 1) {
       setSelectedProject(selectedProject + 1)
     }
   }
@@ -53,16 +53,6 @@ export default function Projects() {
             {t.projects.title}
           </motion.h2>
 
-          <motion.p
-            className="text-xl text-text-muted mb-16 text-center max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            {t.projects.subtitle}
-          </motion.p>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.projects.content.map((project, index) => (
               <ProjectCard
@@ -82,7 +72,7 @@ export default function Projects() {
         onClose={closeModal}
         onNext={goToNext}
         onPrev={goToPrev}
-        hasNext={selectedProject !== null && selectedProject < portfolioData.projects.length - 1}
+        hasNext={selectedProject !== null && selectedProject < t.projects.content.length - 1}
         hasPrev={selectedProject !== null && selectedProject > 0}
       />
     </>
