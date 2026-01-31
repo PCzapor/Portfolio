@@ -13,6 +13,14 @@ export const portfolioData: PortfolioData = {
       'Pasjonuję się nowoczesnymi technologiami i ciągłym rozwojem',
     ],
   },
+  sections : [
+    { id: 'hero', key: 'start' },
+    { id: 'about', key: 'about' },
+    { id: 'skills', key: 'skills' },
+    { id: 'projects', key: 'projects' },
+    { id: 'experience', key: 'experience' },
+    { id: 'contact', key: 'contact' },
+  ],
   skills: [
     {
       category: 'Frontend',

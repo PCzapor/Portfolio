@@ -31,6 +31,7 @@ export interface PortfolioData {
   about: {
     bullets: string[]
   }
+  sections: { id: string; key: string }[]
   skills: Skill[]
   contact: {
     email: string

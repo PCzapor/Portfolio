@@ -1,6 +1,21 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+
 export default function BgGlassPanels() {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setPrefersReducedMotion(mediaQuery.matches)
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches)
+    }
+
+    mediaQuery.addEventListener('change', handleChange)
+    return () => mediaQuery.removeEventListener('change', handleChange)
+  }, [])
   // fill shapes (bez zmian)
   const d1 = 'M-100 120 L520 -80 L720 780 L80 920 Z'
   const d2 = 'M520 -60 L1320 120 L1120 820 L340 620 Z'
@@ -70,27 +85,31 @@ export default function BgGlassPanels() {
         <circle r="2.3" fill="rgba(240,122,43,0.95)" />
         <circle r="16" fill="url(#sparkGlow)" />
 
-        {/* 1 -> 2 -> bridge -> 3 -> return -> loop */}
-        <animateMotion id="m1" dur="5.6s" begin="0s; m5.end" repeatCount="1" rotate="auto">
-          <mpath href="#shape1Motion" />
-        </animateMotion>
+        {!prefersReducedMotion && (
+          <>
+            {/* 1 -> 2 -> bridge -> 3 -> return -> loop */}
+            <animateMotion id="m1" dur="5.6s" begin="0s; m5.end" repeatCount="1" rotate="auto">
+              <mpath href="#shape1Motion" />
+            </animateMotion>
 
-        <animateMotion id="m2" dur="5s" begin="m1.end" repeatCount="1" rotate="auto">
-          <mpath href="#shape2Motion" />
-        </animateMotion>
+            <animateMotion id="m2" dur="5s" begin="m1.end" repeatCount="1" rotate="auto">
+              <mpath href="#shape2Motion" />
+            </animateMotion>
 
-        {/* zjazd po 2-giej ścianie shape1 + doskok do startu shape3  */}
-        <animateMotion id="m3" dur="2s" begin="m2.end" repeatCount="1" rotate="auto">
-          <mpath href="#bridge23" />
-        </animateMotion>
+            {/* zjazd po 2-giej ścianie shape1 + doskok do startu shape3  */}
+            <animateMotion id="m3" dur="2s" begin="m2.end" repeatCount="1" rotate="auto">
+              <mpath href="#bridge23" />
+            </animateMotion>
 
-        <animateMotion id="m4" dur="5s" begin="m3.end" repeatCount="1" rotate="auto">
-          <mpath href="#shape3Motion" />
-        </animateMotion>
+            <animateMotion id="m4" dur="5s" begin="m3.end" repeatCount="1" rotate="auto">
+              <mpath href="#shape3Motion" />
+            </animateMotion>
 
-        <animateMotion id="m5" dur="1.1s" begin="m4.end" repeatCount="1" rotate="auto">
-          <mpath href="#returnPath" />
-        </animateMotion>
+            <animateMotion id="m5" dur="1.1s" begin="m4.end" repeatCount="1" rotate="auto">
+              <mpath href="#returnPath" />
+            </animateMotion>
+          </>
+        )}
       </g>
     </svg>
   )

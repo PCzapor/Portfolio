@@ -26,6 +26,7 @@ export default function Contact() {
     <section
       id="contact"
       className="py-24 px-4 sm:px-6 lg:px-8"
+      aria-labelledby="contact-title"   
     >
       <div className="max-w-4xl mx-auto">
         <motion.h2
@@ -34,6 +35,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          id="contact-title"  
         >
           {t.contact.title}
         </motion.h2>
@@ -61,7 +63,7 @@ export default function Contact() {
                 <p className="text-sm text-text-muted mb-1">{t.contact.email}</p>
                 <a
                   href={`mailto:${portfolioData.contact.email}`}
-                  className="text-lg text-text-main hover:text-accent-orange transition-colors"
+                  className="text-lg text-text-main hover:text-accent-orange transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark rounded"
                 >
                   {portfolioData.contact.email}
                 </a>
@@ -91,10 +93,10 @@ export default function Contact() {
                 href={portfolioData.contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-lg bg-[rgba(255,255,255,0.03)] border border-circuit hover:border-accent-orange/50 text-text-muted hover:text-accent-orange transition-all duration-200 backdrop-blur-sm"
+                className="p-4 rounded-lg bg-[rgba(255,255,255,0.03)] border border-circuit hover:border-accent-orange/50 text-text-muted hover:text-accent-orange transition-all duration-200 backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                aria-label="LinkedIn"
+                aria-label="LinkedIn - profil na LinkedIn"
               >
                 <svg
                   className="w-6 h-6"
@@ -111,10 +113,10 @@ export default function Contact() {
                 href={portfolioData.contact.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-lg bg-[rgba(255,255,255,0.03)] border border-circuit hover:border-accent-orange/50 text-text-muted hover:text-accent-orange transition-all duration-200 backdrop-blur-sm"
+                className="p-4 rounded-lg bg-[rgba(255,255,255,0.03)] border border-circuit hover:border-accent-orange/50 text-text-muted hover:text-accent-orange transition-all duration-200 backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                aria-label="GitHub"
+                aria-label="GitHub - profil na GitHub"
               >
                 <svg
                   className="w-6 h-6"

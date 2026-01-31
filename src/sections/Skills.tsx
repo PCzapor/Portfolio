@@ -9,14 +9,15 @@ export default function Skills() {
   const { language } = useLanguage()
   const t = translations[language]
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8" aria-labelledby="skills-title">
       <div className="max-w-6xl mx-auto">
         <motion.h2
-          className="text-4xl sm:text-5xl font-bold animated-accent-text text-base-50 mb-16 text-center"
+          className="text-4xl sm:text-5xl font-bold animated-accent-text text-base-50 mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          id="skills-title"
         >
           {t.skills.title}
         </motion.h2>

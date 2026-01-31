@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { portfolioData } from '@/src/content/portfolio'
 import { useLanguage } from '@/src/contexts/LanguageContext'
 import { translations } from '@/src/i18n/translations'
 
@@ -14,14 +13,15 @@ export default function Experience() {
   }
 
   return (
-    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8" aria-labelledby="experience-title">
       <div className="max-w-4xl mx-auto">
         <motion.h2
-          className="text-4xl sm:text-5xl font-heading font-bold animated-accent-text mb-16 text-center uppercase tracking-wider"
+          className="text-4xl sm:text-5xl font-heading font-bold animated-accent-text mb-12 text-center uppercase tracking-wider"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          id="experience-title"
         >
           {t.experience.title}
         </motion.h2>

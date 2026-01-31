@@ -160,7 +160,7 @@ export default function ProjectModal({
 
                 <button
                   onClick={onClose}
-                  className="ml-4 p-2 rounded-lg text-text-muted hover:text-text-main hover:bg-[rgba(255,255,255,0.03)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange"
+                  className="ml-4 p-2 rounded-lg text-text-muted hover:text-text-main hover:bg-[rgba(255,255,255,0.03)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark"
                   aria-label={t.modal.close}
                 >
                   <svg
@@ -192,7 +192,7 @@ export default function ProjectModal({
                     >
                       <Image
                         src={mainImage}
-                        alt={`${project.title} - Screenshot ${mainImageIndex + 1}`}
+                        alt={`${project.title} - Screenshot ${mainImageIndex + 1} z ${project.images.length}`}
                         fill
                         className="object-contain"
                         priority
@@ -210,18 +210,19 @@ export default function ProjectModal({
                         <motion.button
                           key={index}
                           onClick={() => handleThumbnailClick(index)}
-                          className={`relative flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                          className={`relative flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark ${
                             index === mainImageIndex
                               ? 'border-accent-orange ring-2 ring-accent-orange/50'
                               : 'border-circuit hover:border-accent-orange/50'
                           }`}
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          aria-label={`Pokaż obrazek ${index + 1}`}
+                          aria-label={`Pokaż obrazek ${index + 1} z ${project.images.length} dla projektu ${project.title}`}
+                          aria-pressed={index === mainImageIndex}
                         >
                           <Image
                             src={image}
-                            alt={`Miniatura ${index + 1}`}
+                            alt={index === mainImageIndex ? `${project.title} - miniatura ${index + 1} z ${project.images.length} (aktywna)` : `${project.title} - miniatura ${index + 1} z ${project.images.length}`}
                             fill
                             className="object-cover"
                             sizes="96px"
@@ -238,12 +239,12 @@ export default function ProjectModal({
 
                 <div className="px-6 pb-6">
                   <div className="prose prose-invert max-w-none">
-                    <p className="text-text-main leading-relaxed mb-6">
+                    <p className="text-text-main leading-relaxed mb-12">
                       {project.description}
                     </p>
 
-                    <div className="mb-6">
-                      <h3 className="text-lg font-heading font-semibold animated-accent-text my-auto uppercase tracking-wider">
+                    <div className="mb-12">
+                      <h3 className="text-lg font-heading font-semibold mb-2 animated-accent-text my-auto uppercase tracking-wider">
                         {t.modal.features}
                       </h3>
                       <ul className="space-y-2">
@@ -260,7 +261,7 @@ export default function ProjectModal({
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-heading font-semibold animated-accent-text my-auto uppercase tracking-wider">
+                      <h3 className="text-lg font-heading font-semibold mb-2 animated-accent-text my-auto uppercase tracking-wider">
                         {t.modal.tasks}
                       </h3>
                       <ul className="space-y-2">

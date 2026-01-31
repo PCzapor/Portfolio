@@ -17,9 +17,9 @@ export const translations = {
     about: {
       title: 'O MNIE',
       bullets: [
-        'Specjalizuję się w [[React]], [[Next.js]], [[Vue 3]] i [[TypeScript]]',
-        'Buduję skalowalne backendy w [[Node.js]]',
-        'Dbam o jakość kodu, testy i best practices',
+        'Specjalizuję się w [[React]] [[Next.js]] [[Vue 3]]  [[TypeScript]]',
+        'Buduję skalowalne backendy w [[Node.js]] [[NestJS]]',
+        'Dbam o jakość kodu, testy i best practices w środowisku CI/CD',
         'Pracuję w metodologiach Agile/Scrum',
         'Pasjonuję się nowoczesnymi technologiami i ciągłym rozwojem',
       ],
@@ -278,9 +278,9 @@ export const translations = {
     about: {
       title: 'ABOUT',
       bullets: [
-        'I specialize in [[React]], [[Next.js]], [[Vue 3]] and [[TypeScript]]',
-        'I build scalable backends in [[Node.js]]',
-        'I care about code quality, tests and best practices',
+        'I specialize in [[React]] [[Next.js]] [[Vue 3]] [[TypeScript]]',
+        'I build scalable backends in [[Node.js]] [[NestJS]]',
+        'I care about code quality, tests and best practices in CI/CD environment',
         'I work in Agile/Scrum methodologies',
         'I am passionate about modern technologies and continuous development',
       ],

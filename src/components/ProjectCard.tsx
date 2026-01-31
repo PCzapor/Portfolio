@@ -16,20 +16,23 @@ export default function ProjectCard({
   index,
 }: ProjectCardProps) {
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group cursor-pointer"
-      onClick={onClick}
+      className="group"
     >
-      <div className="relative overflow-hidden rounded-lg bg-[rgba(255,255,255,0.03)] border border-circuit hover:border-accent-orange/50 transition-all duration-300 backdrop-blur-sm">
+      <button
+        onClick={onClick}
+        className="w-full text-left relative overflow-hidden rounded-lg bg-[rgba(255,255,255,0.03)] border border-circuit hover:border-accent-orange/50 transition-all duration-300 backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark"
+        aria-label={`Otwórz szczegóły projektu ${project.title}`}
+      >
         <div className="relative aspect-video overflow-hidden bg-bg-dark">
           {project.images[0] && (
             <Image
               src={project.images[0]}
-              alt={project.title}
+              alt={`Screenshot projektu ${project.title}`}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -72,7 +75,7 @@ export default function ProjectCard({
         </div>
 
         <div className="absolute inset-0 bg-accent-orange/0 group-hover:bg-accent-orange/5 transition-colors duration-300 pointer-events-none" />
-      </div>
-    </motion.div>
+      </button>
+    </motion.article>
   )
 }

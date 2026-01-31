@@ -41,6 +41,7 @@ export default function Projects() {
       <section
         id="projects"
         className="py-24 px-4 sm:px-6 lg:px-8"
+        aria-labelledby="projects-title"
       >
         <div className="max-w-7xl mx-auto">
           <motion.h2
@@ -49,7 +50,8 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-          >
+            id="projects-title"
+          > 
             {t.projects.title}
           </motion.h2>
 

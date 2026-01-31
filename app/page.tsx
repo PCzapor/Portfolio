@@ -7,6 +7,8 @@ import Contact from '@/src/sections/Contact'
 import Footer from '@/src/sections/Footer'
 import Navigation from '@/src/components/Navigation'
 import BgGlassPanels from '@/src/components/BgGlassPanels'
+import BackToTop from '@/src/components/BackToTop'
+import SkipToContent from '@/src/components/SkipToContent'
 
 export default function Home() {
   return (
@@ -15,7 +17,8 @@ export default function Home() {
         <BgGlassPanels />
       </div>
       
-      <main className="relative min-h-screen">
+      <SkipToContent />
+      <main id="main-content" className="relative min-h-screen">
         <Navigation />
         <Hero />
         <About />
@@ -24,6 +27,7 @@ export default function Home() {
         <Experience />
         <Contact />
         <Footer />
+        <BackToTop />
       </main>
     </>
   )

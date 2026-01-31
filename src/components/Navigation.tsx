@@ -6,15 +6,6 @@ import { useLanguage } from '@/src/contexts/LanguageContext'
 import { translations } from '@/src/i18n/translations'
 import { portfolioData } from '../content/portfolio'
 
-const sections = [
-  { id: 'hero', key: 'start' },
-  { id: 'about', key: 'about' },
-  { id: 'skills', key: 'skills' },
-  { id: 'projects', key: 'projects' },
-  { id: 'experience', key: 'experience' },
-  { id: 'contact', key: 'contact' },
-]
-
 export default function Navigation() {
   const { language, setLanguage } = useLanguage()
   const [activeSection, setActiveSection] = useState('hero')
@@ -31,17 +22,17 @@ export default function Navigation() {
 
       let currentSection = 'hero'
       
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i].id)
+      for (let i = portfolioData.sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(portfolioData.sections[i].id)
         if (section) {
           const sectionTop = section.offsetTop
           const sectionBottom = sectionTop + section.offsetHeight
           
           if (
             (sectionTop <= scrollPosition && sectionBottom > scrollPosition) ||
-            (i === sections.length - 1 && scrollBottom >= document.documentElement.scrollHeight - 50)
+            (i === portfolioData.sections.length - 1 && scrollBottom >= document.documentElement.scrollHeight - 50)
           ) {
-            currentSection = sections[i].id
+            currentSection = portfolioData.sections[i].id
             break
           }
         }
@@ -75,6 +66,7 @@ export default function Navigation() {
 
   return (
     <motion.nav
+      aria-label="Primary navigation"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -87,7 +79,8 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           <button
             onClick={() => scrollToSection('hero')}
-            className="flex flex-col text-xl font-heading font-bold animated-accent-text hover:text-accent-orange transition-colors uppercase tracking-wider"
+            className="flex flex-col text-xl font-heading font-bold animated-accent-text hover:text-accent-orange transition-colors uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark"
+            aria-label="Przejdź do strony głównej"
           >
             {portfolioData.name.toUpperCase()}
             <span className='text-xs hidden lg:block'>
@@ -96,15 +89,17 @@ export default function Navigation() {
           </button>
 
           <div className="hidden md:flex items-center gap-1">
-            {sections.map((section) => (
+            {portfolioData.sections.map((section) => (
               <button
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
-                className={`px-4 py-2 rounded-lg text-xs font-heading font-medium transition-all duration-200 uppercase tracking-wider ${
+                className={`px-4 py-2 rounded-lg text-xs font-heading font-medium transition-all duration-200 uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark ${
                   activeSection === section.id
                     ? 'text-accent-orange bg-[rgba(255,255,255,0.03)] border border-circuit'
                     : 'text-text-muted hover:text-text-main hover:bg-[rgba(255,255,255,0.02)]'
                 }`}
+                aria-label={`Przejdź do sekcji ${t.nav[section.key as keyof typeof t.nav]}`}
+                aria-current={activeSection === section.id ? true : false}
               >
                 {t.nav[section.key as keyof typeof t.nav]}
               </button>
@@ -115,22 +110,26 @@ export default function Navigation() {
             <div className="flex items-center gap-1 border border-circuit rounded-lg p-1">
               <button
                 onClick={() => setLanguage('pl')}
-                className={`px-2 py-1 text-xs font-heading transition-colors ${
+                className={`px-2 py-1 text-xs font-heading transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark ${
                   language === 'pl'
                     ? 'text-accent-orange'
                     : 'text-text-muted hover:text-text-main'
                 }`}
+                aria-label="Przełącz na język polski"
+                aria-pressed={language === 'pl'}
               >
                 PL
               </button>
-              <div className="w-px h-4 bg-circuit" />
+              <div className="w-px h-4 bg-circuit" aria-hidden="true" />
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-2 py-1 text-xs font-heading transition-colors ${
+                className={`px-2 py-1 text-xs font-heading transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark ${
                   language === 'en'
                     ? 'text-accent-orange'
                     : 'text-text-muted hover:text-text-main'
                 }`}
+                aria-label="Switch to English"
+                aria-pressed={language === 'en'}
               >
                 EN
               </button>
@@ -139,7 +138,8 @@ export default function Navigation() {
             <div className="md:hidden">
               <button
                 onClick={() => scrollToSection('contact')}
-                className="px-4 py-2 text-xs font-heading font-medium text-accent-orange hover:animated-accent-text transition-colors uppercase tracking-wider"
+                className="px-4 py-2 text-xs font-heading font-medium text-accent-orange hover:animated-accent-text transition-colors uppercase tracking-wider focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark"
+                aria-label={`Przejdź do sekcji ${t.nav.contact}`}
               >
                 {t.nav.contact}
               </button>

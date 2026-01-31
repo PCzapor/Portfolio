@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import { useLanguage } from "@/src/contexts/LanguageContext"
 import { translations } from "@/src/i18n/translations"
 
-type TechKey = "TypeScript" | "React" | "Next.js" | "Node.js" | "Vue 3"
+type TechKey = "TypeScript" | "React" | "Next.js" | "Node.js" | "Vue 3" | "NestJS"
 
   const snippets: Record<TechKey, string> = {
     TypeScript: `type User = {
@@ -50,6 +50,15 @@ const app = express()
 app.get("/health", (_, res) => {
   res.json({ ok: true })
 })`,
+
+    "NestJS": `import { NestFactory } from "@nestjs/core"
+import { AppModule } from "./app.module"
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule)
+  await app.listen(3000)
+}
+bootstrap()`,
   }
 
 
@@ -115,7 +124,7 @@ export default function About() {
   const [active, setActive] = useState<TechKey>("TypeScript")
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8" aria-labelledby="about-title">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           className="text-4xl sm:text-5xl font-heading font-bold animated-accent-text mb-12 text-center uppercase tracking-wider"
@@ -123,6 +132,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          id="about-title"
         >
           {t.about.title}
         </motion.h2>
