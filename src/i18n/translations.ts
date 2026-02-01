@@ -92,11 +92,17 @@ export const translations = {
         'Współpraca z backendem, UX oraz zespołami domenowymi przy projektowaniu funkcjonalności',
         'Code review oraz dbanie o jakość i spójność architektury frontendu',
       ],
-      stack: ['React',
-      'TypeScript',
-      'REST API',
-      'Redux / RTK Query',
-      'Tailwind / SCSS',],
+      stack: [
+        'React',
+        'TypeScript',
+        'REST API',
+        'Redux -> Zod',
+        'Tailwind / SCSS',
+        'Formik -> React-hook-form',
+        'chat-genesys',
+        'GTM',
+        'Dialogflow messenger'
+      ],
         role: 'Frontend Developer / Frontend Owner',
         images: [
           '/projects/pgnig/pgnig1.jpg',
@@ -158,7 +164,7 @@ export const translations = {
         title: 'Personal Workspace App',
         tagline: 'Full-stack aplikacja do zarządzania zadaniami, notatkami i kontekstem pracy w jednym miejscu',
         description:
-          'Autorska aplikacja full-stack zaprojektowana jako osobiste środowisko pracy łączące zarządzanie zadaniami, notatkami i kontekstem projektowym. System skupia się na produktywności, przejrzystej architekturze oraz integracji frontendu z backendem w modelu nowoczesnej aplikacji webowej. Projekt rozwijany z naciskiem na jakość kodu, modularność oraz realne wzorce architektoniczne stosowane w aplikacjach produkcyjnych.',
+          'Autorska aplikacja full-stack zbudowana jako projekt ćwiczeniowy, symulujący osobiste środowisko pracy do zarządzania zadaniami i notatkami. Projekt skupiał się na integracji frontendu z backendem, modelowaniu danych oraz budowie modularnej architektury inspirowanej realnymi aplikacjami produkcyjnymi.',
         features: [
           'Zarządzanie zadaniami z podziałem na projekty i statusy',
           'System notatek powiązanych z zadaniami i kontekstem pracy',
@@ -198,9 +204,9 @@ export const translations = {
       {
         id: 'issue-tracker',
         title: 'Issue Tracker',
-        tagline: 'Aplikacja do zarządzania zgłoszeniami, błędami i zadaniami w projekcie',
+        tagline: 'Full-stackowa aplikacja do zarządzania zgłoszeniami i nauki integracji z API',
         description:
-          'Webowa aplikacja typu issue tracker stworzona do zarządzania zgłoszeniami, błędami i zadaniami w zespole projektowym. System umożliwia tworzenie, edycję i śledzenie statusu zgłoszeń, pracę na priorytetach oraz organizację workflow. Projekt był ćwiczeniem budowy czytelnej architektury frontendu, integracji z API oraz obsługi stanu aplikacji w środowisku zbliżonym do realnego narzędzia zespołowego.',
+         'Aplikacja typu issue tracker zbudowana jako projekt przejściowy z frontendu w kierunku backendu. System odwzorowuje podstawowe mechanizmy narzędzi zespołowych i skupia się na integracji z REST API, zarządzaniu stanem serwerowym oraz obsłudze asynchronicznych scenariuszy (ładowanie danych, błędy, synchronizacja UI z backendem).',
         features: [
           'Tworzenie, edycja i usuwanie zgłoszeń (issues)',
           'Statusy i priorytety zgłoszeń',
@@ -210,6 +216,12 @@ export const translations = {
           'Obsługa stanów ładowania i błędów',
         ],
         tasks: [
+          'Projekt modelu danych dla zasobu „issue” (statusy, priorytety, metadane)',
+          'Projektowanie struktury endpointów REST i operacji CRUD',
+          'Obsługa błędów API i mapowanie ich na stany aplikacji',
+          'Praca z asynchronicznymi requestami, obsługa timeoutów i retry',
+          'Walidacja danych wejściowych zgodnie ze schematem (kontrakt frontend–backend)',
+          'Zrozumienie przepływu request → API → odpowiedź → synchronizacja stanu UI',
           'Implementacja interfejsu użytkownika do zarządzania zgłoszeniami',
           'Integracja z REST API i obsługa requestów',
           'Zarządzanie stanem serwerowym przy użyciu React Query',
@@ -218,6 +230,11 @@ export const translations = {
           'Obsługa nawigacji i routingu w aplikacji',
         ],
         stack: [
+          'Node.js',
+          'NestJS',
+          'Docker',
+          'Postgres',
+          'Express',
           'React',
           'TypeScript',
           'Vite',
@@ -227,7 +244,7 @@ export const translations = {
           'REST API',
           'Tailwind CSS',
         ],
-        role: 'Frontend Developer',
+        role: 'Junior Full-Stack Developer',
         images: [
           '/projects/issue-tracker/issue.png',
           '/projects/issue-tracker/issue1.png',
